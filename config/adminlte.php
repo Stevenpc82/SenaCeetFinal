@@ -247,6 +247,11 @@ return [
             'url'         => 'instructor',
             'icon'        => 'far fa-fw fa-file',
         ],
+        [
+            'text'        => 'Lista Guias',
+            'url'         => 'guias',
+            'icon'        => 'far fa-fw fa-file',
+        ],
     ],
 
     /*

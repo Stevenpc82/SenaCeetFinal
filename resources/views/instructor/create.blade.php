@@ -24,7 +24,12 @@
             </div>
             <div class="form-group">
                 <label for="">Genero</label>
-                <input type="text" class="form-control" name="genero">
+            </br>
+            <select class="form-select form-select-lg mb-3" name="genero" aria-label=".form-select-lg example">
+                <option disabled selected>Selecciones el Genero</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+              </select>
             </div>
             <br>
             <div class="form-group, p-2">
