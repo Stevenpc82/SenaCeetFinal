@@ -37,39 +37,15 @@ class GuideController extends Controller
      */
     public function store(Request $request)
     {
+        $url_imagen = $request->file('guia')->store('public');
+        $url_imagen = str_replace('public/', 'storage/', $url_imagen);
 
-    return $request->all();
-        // $guia_name='';
-        // if($request ->hasfile('guia')){
-        //     $destination_path = 'public/uploads/guias';
-        //     $guia = $request->file('guia');
-        //     $guia_name = $guia->getClientOriginalName();
-        //     $path = $request->file('guia')->storeAs($destination_path,$guia_name);
-        //     $input['guia'] = $guia_name;
+        $guide = Guide::create([
 
-        // }
-        // $guide= Guide::create(
-        //     [
-        //         'name' =>$request->input('name'),
-        //         'guia' =>$guia_name,
-        //     ]);
-
-        //     return redirect('guias');
-
-
-        // $filename='';
-        // if ($request->hasFile('guia')) {
-        //     $file = $request->file('guia');
-        //     $extention = $file->getClientOriginalExtension();
-        //     $filename = time() . '.' . $extention;
-        //     $file->move('uploads/guias/',$filename);
-        // }
-        // $guide = Guide::create([
-
-        //     'name' => $request->input('name'),
-        //     'guia' => $filename,
-        // ]);
-        // return redirect('guias');
+            'name' => $request->input('name'),
+            'guia' => $url_imagen,
+        ]);
+        return redirect('guias');
     }
 
     /**
@@ -82,6 +58,12 @@ class GuideController extends Controller
     {
         $guide =Guide::find($id);
         return view('guias.show',compact('guide'));
+    }
+
+    public function showpdf($id)
+    {
+        $guide =Guide::find($id);
+        return view('guias.pdf',compact('guide'));
     }
 
     /**

@@ -7,30 +7,19 @@
 @stop
 
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
     <div class="col-md-3">
-        <form action="{{route('instructor.update',$apprentice->id)}}" method="post" >
+        <form action="{{route('guias.update',$guide->id)}}" method="post" >
             @csrf
             @method('PUT')
             <div class="form-group">
                 <label for="">Nombre</label>
-                <input type="text" class="form-control" name="nombre" value="{{$apprentice->nombre}}">
+                <input type="text" class="form-control" name="name" value="{{$guide->name}}">
             </div>
-            <div class="form-group">
-                <label for="">Apellido</label>
-                <input type="text" class="form-control" name="apellido" value="{{$apprentice->apellido}}">
-            </div>
-            <div class="form-group">
-                <label for="">Correo</label>
-                <input type="text" class="form-control" name="correo" value="{{$apprentice->correo}}">
-            </div>
-            <div class="form-group">
-                <label for="">Genero</label>
-            </br>
-                <select class="form-select form-select-lg mb-3" name="genero" aria-label=".form-select-lg example">
-                    <option disabled selected>Seleccione el Genero</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                  </select>
+        </br>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Seleccione la Guia</label>
+                <input type="file" class="form-control" name="guia">
             </div>
             <br>
             <div class="form-group, p-2">

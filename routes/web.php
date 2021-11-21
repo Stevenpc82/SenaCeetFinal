@@ -33,6 +33,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::resource('instructor', InstructorController::class);
     Route::resource('guias', GuideController::class);
     Route::resource('apprentice', \App\Http\Controllers\ApprenticeController::class);
+    // Route::get('guias/pdf/{id}', GuideController::class,'showpdf')->name('show.pdf');
 });
 });
 

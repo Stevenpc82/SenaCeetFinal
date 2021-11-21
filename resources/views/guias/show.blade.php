@@ -8,15 +8,15 @@
 
 @section('content')
     <div>
-        <a class="btn btn-danger" href="{{route('instructor.index')}}">Regresar</a>
+        <a class="btn btn-danger" href="{{route('guias.index')}}">Regresar</a>
         <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 p-3">
-                <h2 class="display-5">{{$apprentices->nombre}}</h2>
-                <h3>Id: {{$apprentices->id}}</h3>
-                <p class="lead">Correo: {{$apprentices->correo}}</p>
+                <p class="display-5">Nombre:  {{$guide->name}}</p>
+                <p>Id: {{$guide->id}}</p>
+                <h2>Guia:</h2>
+                <iframe id="iframepdf" width="100%" height="600px" src="{{url('storage/guias/',$guide->guia)}}"></iframe>
+
             </div>
-            <div class="bg-dark shadow-sm mx-auto p-3"
-                 style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">{{$apprentices->genero}}</div>
         </div>
     </div>
     </div>

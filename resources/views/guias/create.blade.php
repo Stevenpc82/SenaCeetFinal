@@ -9,7 +9,7 @@
 @section('content')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
     <div class="col-md-3">
-        <form action="{{route('guias.store')}}" method="POST" >
+        <form action="{{route('guias.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="">Nombre</label>
@@ -19,7 +19,7 @@
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Seleccione la Guia</label>
                     <input type="file" class="form-control" name="guia">
-                  </div>
+                </div>
             <br>
             <div class="form-group, p-2">
                 <button class="btn btn-primary" type="submit">Crear</button>

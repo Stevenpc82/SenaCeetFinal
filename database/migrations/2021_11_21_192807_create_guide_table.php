@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInstructorTable extends Migration
+class CreateGuideTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateInstructorTable extends Migration
      */
     public function up()
     {
-        Schema::create('_instructor', function (Blueprint $table) {
+        Schema::create('guide', function (Blueprint $table) {
             $table->id();
+            $table->string('name',45);
+            $table->string('guia')->nullable();
+            // $table->biginteger('_instructor_id')->unsigned();
+            // $table->foreign('_instructor_id')->references('id')->on('_instructor');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateInstructorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_instructor');
+        Schema::dropIfExists('guide');
     }
 }
