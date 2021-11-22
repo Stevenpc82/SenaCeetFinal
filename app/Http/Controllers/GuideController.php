@@ -87,9 +87,12 @@ class GuideController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $url_guia = $request->file('guia')->store('public');
+        $url_guia = str_replace('public/', '', $url_guia);
+
         $guide =Guide::find($id)->update([
             'name' => $request->input('name'),
-            'guia'=> $request->input('guia'),
+            'guia'=> $url_guia,
         ]);
         return redirect('guias');
     }

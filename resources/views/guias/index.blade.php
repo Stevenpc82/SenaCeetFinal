@@ -27,7 +27,9 @@
                         @forelse($guides as $guide)
                             <th>{{$guide->id}}</th>
                             <th>{{$guide->name}}</th>
-                            <th>{{$guide->guia}}</th>
+                            <th> <a href="{{url('storage',$guide->guia)}}"
+                                class="btn btn-sm btn-outline-primary">PDF</a>
+                            </th>
                             <td>
                                 <form action="{{route('guias.destroy', $guide->id)}}" method="post">
                                     @csrf
