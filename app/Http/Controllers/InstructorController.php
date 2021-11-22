@@ -25,7 +25,8 @@ class InstructorController extends Controller
      */
     public function create()
     {
-        return view('instructor.create');
+        $apprentice=Apprentice::all();
+        return view('instructor.create', compact('apprentice'));
     }
 
     /**
@@ -37,6 +38,7 @@ class InstructorController extends Controller
     public function store(Request $request)
     {
         $apprentices = Apprentice::create([
+            'ficha_id' => $request->input('ficha_id'),
             'nombre' => $request->input('nombre'),
             'apellido' => $request->input('apellido'),
             'correo' => $request->input('correo'),

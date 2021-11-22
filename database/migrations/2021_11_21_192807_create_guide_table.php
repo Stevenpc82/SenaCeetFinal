@@ -17,7 +17,7 @@ class CreateGuideTable extends Migration
             $table->id();
             $table->string('name',45);
             $table->string('guia')->nullable();
-            $table->biginteger('_instructor_id')->unsigned();
+            $table->biginteger('_instructor_id')->unsigned()->nullable();
             $table->foreign('_instructor_id')->references('id')->on('_instructor');
             $table->timestamps();
         });

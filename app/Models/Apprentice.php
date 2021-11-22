@@ -16,5 +16,6 @@ class Apprentice extends Model
         'apellido',
         'correo',
         'genero',
+        'ficha_id',
     ];
 }

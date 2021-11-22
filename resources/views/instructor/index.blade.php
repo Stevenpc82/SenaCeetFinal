@@ -17,6 +17,7 @@
                 <table id="apprientices" class="table">
                     <thead>
                     <tr>
+                        <th scope="col">Ficha</th>
                         <th scope="col">Id</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
@@ -27,6 +28,7 @@
                     <tbody>
                     <tr>
                         @forelse($apprentices as $apprentice)
+                            <td>{{ $apprentice->ficha_id }}</td>
                             <th>{{$apprentice->id}}</th>
                             <th>{{$apprentice->nombre}}</th>
                             <th>{{$apprentice->apellido}}</th>

@@ -13,6 +13,7 @@
             <div class="my-3 p-3">
                 <h2 class="display-5">{{$apprentices->nombre}}</h2>
                 <h3>Id: {{$apprentices->id}}</h3>
+                <h3>Ficha Id: {{$apprentices->ficha_id}}</h3>
                 <p class="lead">Correo: {{$apprentices->correo}}</p>
             </div>
             <div class="bg-dark shadow-sm mx-auto p-3"

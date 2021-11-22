@@ -19,10 +19,10 @@ class CreateApprenticesTable extends Migration
             $table->String('apellido');
             $table->String('correo');
             $table->String('genero');
-            $table->biginteger('users_id')->unsigned();
+            $table->biginteger('users_id')->unsigned()->nullable();
             $table->foreign('users_id')->references('id')->on('users');
 
-            $table->biginteger('_instructor_id')->unsigned();
+            $table->biginteger('_instructor_id')->unsigned()->nullable();
             $table->foreign('_instructor_id')->references('id')->on('_instructor');
 
             $table->biginteger('guide_id')->unsigned()->nullable();
