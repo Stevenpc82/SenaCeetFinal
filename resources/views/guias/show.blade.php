@@ -14,7 +14,8 @@
                 <p class="display-5">Nombre:  {{$guide->name}}</p>
                 <p>Id: {{$guide->id}}</p>
                 <h2>Guia:</h2>
-                <iframe id="iframepdf" width="100%" height="600px" src="{{url('storage/guias/',$guide->guia)}}"></iframe>
+                <p>{{$guide->guia}}</p>
+                <iframe id="iframepdf" width="100%" height="600px" src="{{url('storage',$guide->guia)}}"></iframe>
 
             </div>
         </div>

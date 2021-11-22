@@ -38,7 +38,7 @@ class GuideController extends Controller
     public function store(Request $request)
     {
         $url_imagen = $request->file('guia')->store('public');
-        $url_imagen = str_replace('public/', 'storage/', $url_imagen);
+        $url_imagen = str_replace('public/', '', $url_imagen);
 
         $guide = Guide::create([
 
