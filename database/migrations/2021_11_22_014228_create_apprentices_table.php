@@ -25,7 +25,7 @@ class CreateApprenticesTable extends Migration
             $table->biginteger('_instructor_id')->unsigned();
             $table->foreign('_instructor_id')->references('id')->on('_instructor');
 
-            $table->biginteger('guide_id')->unsigned();
+            $table->biginteger('guide_id')->unsigned()->nullable();
             $table->foreign('guide_id')->references('id')->on('guide');
 
             $table->biginteger('ficha_id')->unsigned();

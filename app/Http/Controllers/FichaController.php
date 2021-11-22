@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Guide;
+use App\Models\Ficha;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 
-class GuideController extends Controller
+class FichaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class GuideController extends Controller
      */
     public function index()
     {
-        $guides=Guide::all();
-        return view('guias.index', compact('guides'));
+        $fichas=Ficha::all();
+        return view('fichas.index', compact('fichas'));
     }
 
     /**
@@ -26,7 +25,7 @@ class GuideController extends Controller
      */
     public function create()
     {
-        return view('guias.create');
+        return view('fichas.create');
     }
 
     /**
@@ -37,15 +36,11 @@ class GuideController extends Controller
      */
     public function store(Request $request)
     {
-        $url_imagen = $request->file('guia')->store('public');
-        $url_imagen = str_replace('public/', '', $url_imagen);
-
-        $guide = Guide::create([
+        $ficha = Ficha::create([
 
             'name' => $request->input('name'),
-            'guia' => $url_imagen,
         ]);
-        return redirect('guias');
+        return redirect('fichas');
     }
 
     /**
@@ -56,8 +51,8 @@ class GuideController extends Controller
      */
     public function show($id)
     {
-        $guide =Guide::find($id);
-        return view('guias.show',compact('guide'));
+        $ficha =Ficha::find($id);
+        return view('fichas.show',compact('ficha'));
     }
 
     /**
@@ -68,8 +63,8 @@ class GuideController extends Controller
      */
     public function edit($id)
     {
-        $guide =Guide::find($id);
-        return view('guias.edit',compact('guide'));
+        $ficha =Ficha::find($id);
+        return view('fichas.edit',compact('ficha'));
     }
 
     /**
@@ -81,14 +76,10 @@ class GuideController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $url_guia = $request->file('guia')->store('public');
-        $url_guia = str_replace('public/', '', $url_guia);
-
-        $guide =Guide::find($id)->update([
+        $ficha =Ficha::find($id)->update([
             'name' => $request->input('name'),
-            'guia'=> $url_guia,
         ]);
-        return redirect('guias');
+        return redirect('fichas');
     }
 
     /**
@@ -99,7 +90,7 @@ class GuideController extends Controller
      */
     public function destroy($id)
     {
-        $guide = Guide::find($id)->delete();
-        return redirect('guias');
+        $ficha = Ficha::find($id)->delete();
+        return redirect('fichas');
     }
 }

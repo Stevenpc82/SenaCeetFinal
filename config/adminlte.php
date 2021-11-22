@@ -243,13 +243,23 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Lista Aprendices',
+            'text'        => 'Ficha',
+            'url'         => 'fichas',
+            'icon'        => 'far fa-fw fa-file',
+        ],
+        [
+            'text'        => 'Aprendices',
             'url'         => 'instructor',
             'icon'        => 'far fa-fw fa-file',
         ],
         [
-            'text'        => 'Lista Guias',
+            'text'        => 'Guias',
             'url'         => 'guias',
+            'icon'        => 'far fa-fw fa-file',
+        ],
+        [
+            'text'        => 'Instructores',
+            'url'         => 'instrctores',
             'icon'        => 'far fa-fw fa-file',
         ],
     ],

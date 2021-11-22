@@ -15,8 +15,8 @@ class CreateFichaTable extends Migration
     {
         Schema::create('ficha', function (Blueprint $table) {
             $table->id();
-            $table->String('nombre');
-            $table->biginteger('guide_id')->unsigned();
+            $table->String('name');
+            $table->biginteger('guide_id')->unsigned()->nullable();
             $table->foreign('guide_id')->references('id')->on('guide');
             $table->timestamps();
         });
