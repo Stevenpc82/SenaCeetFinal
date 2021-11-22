@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApprenticeController;
 use App\Http\Controllers\FichaController;
 use App\Http\Controllers\GuideController;
 use Illuminate\Support\Facades\Route;
@@ -34,8 +35,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::resource('instructor', InstructorController::class);
     Route::resource('guias', GuideController::class);
     Route::resource('fichas', FichaController::class);
-    Route::resource('apprentice', \App\Http\Controllers\ApprenticeController::class);
-    // Route::get('guias/pdf/{id}', GuideController::class,'showpdf')->name('show.pdf');
+    Route::resource('apprentices', ApprenticeController::class);
 });
 });
 

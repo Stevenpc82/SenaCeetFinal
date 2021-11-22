@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Apprentice;
+use App\Models\instructor;
 
 class InstructorController extends Controller
 {
@@ -14,8 +14,8 @@ class InstructorController extends Controller
      */
     public function index()
     {
-        $apprentices=Apprentice::all();
-        return view('instructor.index', compact('apprentices'));
+        $instructors=instructor::all();
+        return view('instructor.index', compact('instructors'));
     }
 
     /**
@@ -25,8 +25,8 @@ class InstructorController extends Controller
      */
     public function create()
     {
-        $apprentice=Apprentice::all();
-        return view('instructor.create', compact('apprentice'));
+        $instructor=instructor::all();
+        return view('instructor.create', compact('instructor'));
     }
 
     /**
@@ -37,8 +37,7 @@ class InstructorController extends Controller
      */
     public function store(Request $request)
     {
-        $apprentices = Apprentice::create([
-            'ficha_id' => $request->input('ficha_id'),
+        $instructors = instructor::create([
             'nombre' => $request->input('nombre'),
             'apellido' => $request->input('apellido'),
             'correo' => $request->input('correo'),
@@ -54,8 +53,8 @@ class InstructorController extends Controller
      */
     public function show($id)
     {
-        $apprentices = Apprentice::find($id);
-        return view('instructor.show', compact('apprentices'));
+        $instructors = instructor::find($id);
+        return view('instructor.show', compact('instructors'));
     }
 
     /**
@@ -66,8 +65,8 @@ class InstructorController extends Controller
      */
     public function edit($id)
     {
-        $apprentice = Apprentice::find($id);
-        return view('instructor.edit', compact('apprentice'));
+        $instructor = instructor::find($id);
+        return view('instructor.edit', compact('instructor'));
     }
 
     /**
@@ -79,7 +78,7 @@ class InstructorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $apprentices = Apprentice::find($id)->update([
+        $instructors = instructor::find($id)->update([
             'nombre' => $request->input('nombre'),
             'apellido' => $request->input('apellido'),
             'correo' => $request->input('correo'),
@@ -96,7 +95,7 @@ class InstructorController extends Controller
      */
     public function destroy($id)
     {
-        $apprentices = Apprentice::find($id)->delete();
+        $instructors = instructor::find($id)->delete();
         return redirect('instructor');
     }
 }

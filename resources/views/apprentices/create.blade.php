@@ -10,6 +10,14 @@
     <div class="col-md-3">
         <form action="{{route('instructor.store')}}" method="post" >
             @csrf
+            <div class="form-group">
+                <label for="">Ficha</label>
+                <input type="text" class="form-control" name="ficha_id">
+            </br>
+            {{-- <select class="form-select form-select-lg mb-3" name="ficha_id" aria-label=".form-select-lg example">
+                <option disabled selected>Selecciones la Ficha</option>
+                <option value="{{ $apprentice->ficha->id }}">{{ $apprentices->ficha->id }}</option>
+              </select> --}}
             </div>
             <div class="form-group">
                 <label for="">Nombre</label>

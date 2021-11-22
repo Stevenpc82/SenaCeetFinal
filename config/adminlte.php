@@ -249,7 +249,7 @@ return [
         ],
         [
             'text'        => 'Aprendices',
-            'url'         => 'instructor',
+            'url'         => 'apprentices',
             'icon'        => 'far fa-fw fa-file',
         ],
         [
@@ -259,7 +259,7 @@ return [
         ],
         [
             'text'        => 'Instructores',
-            'url'         => 'instrctores',
+            'url'         => 'instructor',
             'icon'        => 'far fa-fw fa-file',
         ],
     ],

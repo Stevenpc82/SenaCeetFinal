@@ -8,20 +8,24 @@
 
 @section('content')
     <div class="col-md-3">
-        <form action="{{route('instructor.update',$instructor->id)}}" method="post" >
+        <form action="{{route('instructor.update',$apprentice->id)}}" method="post" >
             @csrf
             @method('PUT')
             <div class="form-group">
+                <label for="">Ficha </label>
+                <input type="text" class="form-control" name="ficha_id" value="{{$apprentice->ficha_id}}">
+            </div>
+            <div class="form-group">
                 <label for="">Nombre</label>
-                <input type="text" class="form-control" name="nombre" value="{{$instructor->nombre}}">
+                <input type="text" class="form-control" name="nombre" value="{{$apprentice->nombre}}">
             </div>
             <div class="form-group">
                 <label for="">Apellido</label>
-                <input type="text" class="form-control" name="apellido" value="{{$instructor->apellido}}">
+                <input type="text" class="form-control" name="apellido" value="{{$apprentice->apellido}}">
             </div>
             <div class="form-group">
                 <label for="">Correo</label>
-                <input type="text" class="form-control" name="correo" value="{{$instructor->correo}}">
+                <input type="text" class="form-control" name="correo" value="{{$apprentice->correo}}">
             </div>
             <div class="form-group">
                 <label for="">Genero</label>

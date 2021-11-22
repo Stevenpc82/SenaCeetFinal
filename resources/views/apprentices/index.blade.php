@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Listado instructores</h1>
+    <h1>Listado aprendices</h1>
 @stop
 
 @section('content')
@@ -14,9 +14,10 @@
     <div class="modal-content">
         <div class="p-4">
             <div>
-                <table id="instructor" class="table">
+                <table id="apprientices" class="table">
                     <thead>
                     <tr>
+                        <th scope="col">Ficha</th>
                         <th scope="col">Id</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
@@ -26,19 +27,20 @@
                     </thead>
                     <tbody>
                     <tr>
-                        @forelse($instructors as $instructor)
-                            <th>{{$instructor->id}}</th>
-                            <th>{{$instructor->nombre}}</th>
-                            <th>{{$instructor->apellido}}</th>
-                            <th>{{$instructor->correo}}</th>
-                            <th>{{$instructor->genero}}</th>
+                        @forelse($apprentices as $apprentice)
+                            <td>{{ $apprentice->ficha_id }}</td>
+                            <th>{{$apprentice->id}}</th>
+                            <th>{{$apprentice->nombre}}</th>
+                            <th>{{$apprentice->apellido}}</th>
+                            <th>{{$apprentice->correo}}</th>
+                            <th>{{$apprentice->genero}}</th>
                             <td>
-                                <form action="{{route('instructor.destroy', $instructor->id)}}" method="post">
+                                <form action="{{route('instructor.destroy', $apprentice->id)}}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <a href="{{route('instructor.show',$instructor->id)}}"
+                                    <a href="{{route('instructor.show',$apprentice->id)}}"
                                        class="btn btn-sm btn-outline-info">Detalles</a>
-                                    <a href="{{route('instructor.edit',$instructor->id)}}"
+                                    <a href="{{route('instructor.edit',$apprentice->id)}}"
                                        class="btn btn-sm btn-outline-warning ">Editar</a>
                                     <button class="btn btn-sm btn-outline-danger submit-prevent-button" type="sumbit">
                                         Eliminar
