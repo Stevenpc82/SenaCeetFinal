@@ -31,6 +31,7 @@
                             <th>{{$instructor->nombre}}</th>
                             <th>{{$instructor->apellido}}</th>
                             <th>{{$instructor->correo}}</th>
+
                             <th>{{$instructor->genero}}</th>
                             <td>
                                 <form action="{{route('instructor.destroy', $instructor->id)}}" method="post">
